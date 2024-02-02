@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: 
+      - application-randomset.yml
+      
+app:
+  api-url: http://127.0.0.1:9081/ipm-api
+  send-collect-logs: collect-logs/send
+  send-dn-logs: download-logs/send
+
+env:
+  type: ${TYPE:collect}
+  cnt: ${CNT:5}
