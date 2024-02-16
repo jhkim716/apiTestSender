@@ -12,3 +12,4 @@ app:
 env:
   type: ${TYPE:collect}
   cnt: ${CNT:5}
+  targetDate: ${TARGET_DATE:}

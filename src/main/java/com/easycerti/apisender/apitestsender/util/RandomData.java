@@ -48,6 +48,9 @@ public class RandomData {
 	@Value("${random-set.downReasonTypes}")		// 다운로드 사유 리스트	// 다운로드 로그
 	private List<String> downReasonTypeList;
 	
+	@Value("${env.targetDate}")
+	private String targetDate;
+	
 	// 랜덤 수집로그 가져오기
 	public String getRandomCollectLogListStr(Integer listSize) {
 		
@@ -60,7 +63,10 @@ public class RandomData {
 		int eachDetailMinCntNum = Integer.parseInt(eachDetailMinCnt);
 		int eachDetailMaxCntNum = Integer.parseInt(eachDetailMaxCnt);
 		
-		String dateString = LocalDate.now().toString();
+		String dateString = targetDate;
+		if( dateString == null || "".equals(dateString) ) {
+			dateString = LocalDate.now().toString();
+		}
 		List<String> timeListSet = getTimeArrSet(100);
 		// --- 설정 준비
 		
@@ -104,7 +110,10 @@ public class RandomData {
 		int eachDetailMinCntNum = Integer.parseInt(eachDetailMinCnt);
 		int eachDetailMaxCntNum = Integer.parseInt(eachDetailMaxCnt);
 		
-		String dateString = LocalDate.now().toString();
+		String dateString = targetDate;
+		if( dateString == null || "".equals(dateString) ) {
+			dateString = LocalDate.now().toString();
+		}
 		List<String> timeListSet = getTimeArrSet(100);
 		// --- 설정 준비
 		
@@ -114,7 +123,7 @@ public class RandomData {
 				
 				setUserInfoMap(downloadLogMap);				// 유저 정보
 				setUrlMap(downloadLogMap, urlLengthNum);		// Url 정보
-				setReqTypeMap(downloadLogMap);				// 요청 타입정보
+				downloadLogMap.put("reqType", "DN");				// 요청 타입정보
 				setSystemSeqMap(downloadLogMap);				// 시스템 Seq 정보
 				setAbContentsMap(downloadLogMap, eachDetailMinCntNum, eachDetailMaxCntNum);	// 상세로그 리스트 정보
 				setLogTimeMap(downloadLogMap, dateString, timeListSet);	// 일시정보
