@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.easycerti.apisender.apitestsender.util.RandomData;
+import com.easycerti.apisender.apitestsender.util.RandomDataSkPoC;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,6 +44,9 @@ public class MainApp implements CommandLineRunner {
 	@Autowired
 	private RandomData randomData;
 	
+	@Autowired
+	private RandomDataSkPoC randomSkPoC;
+	
 	@Override
 	public void run(String... args) {
 		
@@ -59,9 +63,13 @@ public class MainApp implements CommandLineRunner {
 			else if("download".equals(type) ) {	// 다운로드로그 타입 설정
 				data = randomData.getRandomCollectLogDnListStr(listNum < 1 ? 1 : listNum);	// 랜덤 다운로드로그 데이터 가져오기
 				secondUrl = sendDownloadLog;	// url
-			} 
+			}
+			else if( type != null && "skpoc".equals(type.toLowerCase()) ) {	// skPoc용 로그 타입
+				data = randomSkPoC.getRandomCollectLogListStr(listNum < 1 ? 1 : listNum);	// 랜덤 로그 데이터 가져오기
+				secondUrl = sendCollectLog;	// url
+			}
 			else {
-				throw new Exception("TYPE 이 매칭되지 않음. --TYPE=collect, --TYPE=download 중 하나를 입력.");
+				throw new Exception("TYPE 이 매칭되지 않음. --TYPE=collect, --TYPE=download 중 하나를 입력. : type: " + type);
 			}
 			
 			// api 호출동작 시작

@@ -3,6 +3,7 @@ spring:
   config:
     import: 
       - application-randomset.yml
+      - application-randomskpoc.yml
       
 app:
   api-url: http://127.0.0.1:9081/ipm-api

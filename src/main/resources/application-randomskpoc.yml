@@ -1,0 +1,118 @@
+random-set-skpoc:
+  hoursPer:
+    00:0,
+    01:0,
+    02:0,
+    03:0,
+    04:0,
+    05:0,
+    06:1,
+    07:2,
+    08:3,
+    09:13,
+    10:14,
+    11:13,
+    12:2,
+    13:15,
+    14:12,
+    15:13,
+    16:11,
+    17:13,
+    18:16,
+    19:5,
+    20:3,
+    21:2,
+    22:1,
+    23:0
+#    사용자:11111(사번):10.16.49.39(IP):DEPT10000(부서ID):품질경영처(부서명)
+  usersInfo:
+    사용자1:11211::SK:SK,
+    사용자2:11212::SK:SK,
+    사용자3:11213::SK:SK,
+    사용자4:11214::SK:SK,
+    사용자5:11215::SK:SK,
+    사용자6:11216::SK:SK,
+    사용자7:11217::SK:SK,
+    사용자8:11218::SK:SK,
+    사용자9:11219::SK:SK,
+    사용자10:11220::SK:SK,
+    사용자11:11221::SK:SK,
+    사용자12:11222::SK:SK,
+    사용자13:11223::SK:SK,
+    사용자14:11224::SK:SK,
+    사용자15:11225::SK:SK
+    
+    
+  system-info:
+    list:
+      - tableName: Network DLP format
+        tableColumns:
+          type:
+            - HTTP
+            - Email/SMTP
+          message_status:
+            - Blocked
+            - Passed
+          Policy-type1: 
+            - "[WEB Prevent] DCM 개인정보(주민번호)-000"
+            - "[WEB Prevent] DCM 개인정보(여권번호)-000"
+            - "[WEB Prevent] DCM 개인정보(휴대폰)-000"
+          Policy-type2: 
+            - "[Mail Monitor] DCM 개인정보(주민번호)-000"
+            - "[Mail Monitor] DCM 개인정보(여권번호)-000"
+            - "[Mail Monitor] DCM 개인정보(휴대폰)-000"
+          Recipient-type1: 
+            - http://webmail.pantechcni.com/mail2/file/uploadHandler..
+          Recipient-type2: 
+            - aaa@aaa.go.kr
+            - bbb@bbb.co.kr
+            - aaa@aaa.go.kr, bbb@bbb.co.kr
+              
+      - tableName: EndPoint DLP format
+        tableColumns:
+          types:
+            - Printer/Fax
+          Machine_Name:
+            - PC14113
+            - PC14114
+            - PC14115
+            - PC14116
+          Policy:
+            - "[Endpoint] DCM 개인정보(주민번호)-000"
+            - "[Endpoint] DCM 개인정보(여권번호)-000"
+            - "[Endpoint] DCM 개인정보(휴대폰번호)-000"
+          File_Name:
+            - 사전 요청 정보.xlxs
+            - 반출 요청 정보.xlxs
+          File_Size:
+            - "0Bytes"
+            - "********Bytes"
+            - "*********Bytes"
+              
+      - tableName: Privacy I format
+        tableColumns:
+          dfile_filename:
+            - 주요_업무_개정(2).hwp
+            - 주요_업무_개정.hwp
+            - 상황전파체계.hwp
+            - 상황전파체계(2).hwp
+          dfile_computername:
+            - PC14113
+            - PC14114
+            - PC14115
+            - PC14116
+          dfile_filesize:
+            - "******"
+            - "*****"
+            - "****"
+            - "***"
+            - "**"
+            - "0"
+          dfile_agentip:
+            - "10.10.10.10"
+
+         
+        
+                  
+      
+
