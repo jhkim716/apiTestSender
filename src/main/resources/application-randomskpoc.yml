@@ -96,6 +96,8 @@ random-set-skpoc:
             - 주요_업무_개정.hwp
             - 상황전파체계.hwp
             - 상황전파체계(2).hwp
+            - 사전 요청 정보.xlxs
+            - 반출 요청 정보.xlxs
           dfile_computername:
             - PC14113
             - PC14114
