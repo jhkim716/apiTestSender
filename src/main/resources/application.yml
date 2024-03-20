@@ -6,7 +6,7 @@ spring:
       - application-randomskpoc.yml
       
 app:
-  api-url: http://127.0.0.1:9081/ipm-api
+  api-url: http://127.0.0.1:9081/ims-api
   send-collect-logs: collect-logs/send
   send-dn-logs: download-logs/send
 
