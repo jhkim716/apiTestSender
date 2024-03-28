@@ -284,8 +284,8 @@ public class RandomDataSkPoC {
 		Random random = new Random();
 		int index = random.nextInt(timeSet.size());
 		
-		logMap.put("procDate", date);
-		logMap.put("logTime", String.format("%s %s", date, timeSet.get(index)));
+//		logMap.put("procDate", date);
+		logMap.put("logTime", String.format("%s/%s", date, timeSet.get(index)));
 	}
 	
 	
